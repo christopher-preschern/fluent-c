@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include <stdio.h>
 #include "Driver.h"
 #include "EthIOCTL.h"
 
@@ -26,9 +27,9 @@ void driverIOCTL(DRIVER_HANDLE h, int ioctl, void* context)
 {
 }
 
-void main()
+int main()
 {
-  struct DriverFunctions fp = {sendByte, receiveByte, driverIOCTL};
+  struct DriverFunctions fp = {&sendByte, &receiveByte, &driverIOCTL};
   DRIVER_HANDLE driver = driverCreate(NULL, fp);
   driverDestroy(driver);
   printf("Success: Called functions of the dummy driver!");
