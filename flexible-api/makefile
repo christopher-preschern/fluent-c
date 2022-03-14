@@ -1,6 +1,6 @@
 HEADERS = driver.h EthIOCTL.h UsbIOCTL.h
 
-default: error-handling
+default: flexible-api
 
 error-handling.o: main.c $(HEADERS)
 	gcc -c ethDriver.c -o flexible-api.o
