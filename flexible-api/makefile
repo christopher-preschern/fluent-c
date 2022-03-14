@@ -1,5 +1,5 @@
 HEADERS = driver.h EthIOCTL.h UsbIOCTL.h
-VPATH = /home/runner/work/fluent-c/fluent-c/flexible-api 
+vpath %.h /home/runner/work/fluent-c/fluent-c/flexible-api 
 
 default: flexible-api
 
