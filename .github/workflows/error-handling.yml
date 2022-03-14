@@ -9,14 +9,16 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Build and run error-handling
+    - name: Build error-handling
       working-directory: error-handling
-      run:
-        make
-        ./error-handling.exe
+      run: make
+
+    - name: Run error-handling
+      working-directory: error-handling
+      run: ./error-handling
