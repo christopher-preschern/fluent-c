@@ -25,3 +25,12 @@ char receiveByte(DRIVER_HANDLE h)
 void driverIOCTL(DRIVER_HANDLE h, int ioctl, void* context)
 {
 }
+
+void main()
+{
+  struct DriverFunctions fp = {sendByte, receiveByte, driverIOCTL);
+  DRIVER_HANDLE driver = driverCreate(NULL, fp);
+  driverDestroy(driver);
+  printf("Success: Called functions of the dummy driver!");
+  return 0;
+}
