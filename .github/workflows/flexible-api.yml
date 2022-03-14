@@ -1,0 +1,24 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build flexible API
+      working-directory: flexible-api
+      run: make
+
+    - name: Run flexible-api
+      working-directory: flexible-api
+      run: ./flexible-api
