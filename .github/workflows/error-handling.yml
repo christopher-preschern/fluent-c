@@ -15,6 +15,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Build error-handling
+    - name: Build and run error-handling
       working-directory: error-handling
-      run: make
+      run:
+        make
+        ./error-handling.exe
