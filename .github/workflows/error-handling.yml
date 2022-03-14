@@ -12,6 +12,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: make
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build error-handling
       working-directory: error-handling
       run: make
