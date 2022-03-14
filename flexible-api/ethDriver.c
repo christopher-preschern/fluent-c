@@ -3,7 +3,6 @@
 #include "Driver.h"
 #include "EthIOCTL.h"
 
-/* dummy */
 
 DRIVER_HANDLE driverCreate(void* initArg, struct DriverFunctions f)
 {
@@ -12,10 +11,12 @@ DRIVER_HANDLE driverCreate(void* initArg, struct DriverFunctions f)
 
 void driverDestroy(DRIVER_HANDLE h)
 {
+
 }
 
 void sendByte(DRIVER_HANDLE h, char byte)
 {
+  
 }
 
 char receiveByte(DRIVER_HANDLE h)
@@ -25,13 +26,6 @@ char receiveByte(DRIVER_HANDLE h)
 
 void driverIOCTL(DRIVER_HANDLE h, int ioctl, void* context)
 {
+
 }
 
-int main()
-{
-  struct DriverFunctions fp = {&sendByte, &receiveByte, &driverIOCTL};
-  DRIVER_HANDLE driver = driverCreate(NULL, fp);
-  driverDestroy(driver);
-  printf("Success: Called functions of the dummy driver!");
-  return 0;
-}
