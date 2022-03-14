@@ -29,3 +29,7 @@ void driverIOCTL(DRIVER_HANDLE h, int ioctl, void* context)
 
 }
 
+int main()
+{
+  return 0;
+}
