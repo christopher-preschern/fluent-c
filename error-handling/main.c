@@ -83,7 +83,10 @@ int main()
 {
   int return_value;
   return_value = parseFile("myfile.txt");
-  printf("Return value: %i\n", return_value);
+  if(return_value == KEYWORD_ONE_FOUND_FIRST)
+  {
+    printf("Success: Keyword one found first!");
+  }
   return 0;
 }
 
