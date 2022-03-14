@@ -7,7 +7,7 @@ default: flexible-api
 flexible-api: flexible-api.o
 	gcc flexible-api.o -o flexible-api
 
-flexible-api.o: ethDriver.c $(HEADERS)
+flexible-api.o: ethDriver.c
 	gcc  $(INC) -c ethDriver.c -o flexible-api.o
 
 clean:
