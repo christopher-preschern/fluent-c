@@ -4,4 +4,4 @@ SRC=$(wildcard *.c)
 default: ifdef
 
 ifdef: $(SRC) $(HEADERS)
-	gcc -o $@ $^ -DSTORE_IN_HOME_DIR
+	gcc -o $@ $^ -DSTORE_IN_CWD
