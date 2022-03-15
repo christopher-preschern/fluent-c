@@ -18,3 +18,7 @@ jobs:
     - name: Build ifdef Linux
       working-directory: ifdef
       run: make
+
+    - name: Run ifdef Linux
+      working-directory: ifdef
+      run: ./ifdef
