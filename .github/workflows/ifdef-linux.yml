@@ -15,10 +15,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Build ifdef Linux
+    - name: Build ifdef Linux    
       working-directory: ifdef
       run: make
 
     - name: Run ifdef Linux
       working-directory: ifdef
       run: ./ifdef
+
+    - name: Show file content
+      working-directory: ifdef
+      run: cat newfile
