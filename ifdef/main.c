@@ -6,7 +6,7 @@
 int main()
 {
   char dirname[50];
-  char filename[50];
+  char filename[60];
   char* my_data = "Write this data to the file"; 
   getDirectoryName(dirname);
   createNewDirectory(dirname);
