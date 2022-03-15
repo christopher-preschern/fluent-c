@@ -1,0 +1,28 @@
+name: ifdef Windows
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build ifdef Windows    
+      working-directory: ifdef
+      run: make
+
+    - name: Run ifdef Windows
+      working-directory: ifdef
+      run: ./ifdef
+
+    - name: Show file content
+      working-directory: ifdef
+      run: more newdir\newfile
