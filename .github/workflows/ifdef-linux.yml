@@ -25,4 +25,4 @@ jobs:
 
     - name: Show file content
       working-directory: ifdef
-      run: cat ./newfile
+      run: ls
