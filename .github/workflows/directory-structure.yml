@@ -30,3 +30,7 @@ jobs:
     - name: Build main application    
       working-directory: directory-structure/main
       run: make
+
+    - name: Run main application    
+      working-directory: directory-structure/main
+      run: ./main-application
