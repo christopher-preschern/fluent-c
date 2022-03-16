@@ -1,6 +1,6 @@
 SRC = fileapplication/filereader/filereader.c randomapplication/pseudorandom/pseudorandom.c main.c
-INC = -I/home/runner/work/fluent-c/fluent-c/directory-structure/main/randomapplication/inc -I/home/runner/work/fluent-c/fluent-c/directory-structure/main/fileapplication/inc -I/home/runner/work/fluent-c/fluent-c/directory-structure/main/hashlib
-LIB = /home/runner/work/fluent-c/fluent-c/directory-structure/main/hashlib/hashlib.a
+INC = -I./randomapplication/inc -I./fileapplication/inc -I./hashlib
+LIB = hashlib/hashlib.a
 
 default: main-application
 
