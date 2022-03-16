@@ -19,5 +19,7 @@ int main(int argc, char* argv[])
   unsigned int random = getRandomNumber(50);
   printf("Random value: %u\n", random);
 
+  printf("Success: Calculated hashes and random value");
+
   return 0;
 }
