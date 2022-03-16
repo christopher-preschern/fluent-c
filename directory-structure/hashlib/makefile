@@ -1,5 +1,5 @@
 SRC = adler/adlerhash.c bernstein/bernsteinhash.c
-INC=-I./hashlib/inc
+INC=-I./inc
 
 default: hashlib
 
