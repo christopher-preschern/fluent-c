@@ -1,6 +1,6 @@
 HEADERS = adlerhash.h bernsteinhash.h
 SRC = adler/adlerhash.c bernstein/bernsteinhash.c
-INC=-I./inc
+INC=-I/home/runner/work/fluent-c/fluent-c/directory-structure/hashlib/inc
 
 default: hashlib
 
