@@ -1,7 +1,7 @@
-vpath %.h /home/runner/work/fluent-c/fluent-c/directory-structure/hashlib/inc
+vpath %.h ./hashlib/inc
 HEADERS = adlerhash.h bernsteinhash.h
 SRC = adler/adlerhash.c bernstein/bernsteinhash.c
-INC=-I/home/runner/work/fluent-c/fluent-c/directory-structure/hashlib/inc
+INC=-I./hashlib/inc
 
 default: hashlib
 
