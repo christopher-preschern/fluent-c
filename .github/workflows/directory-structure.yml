@@ -16,7 +16,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Test
-      uses: ls /home/runner/work/fluent-c/fluent-c/directory-structure/hashlib/inc
+      working-directory: directory-structure/hashlib
+      run: ls /home/runner/work/fluent-c/fluent-c/directory-structure/hashlib/inc
       
     - name: Build hashlib    
       working-directory: directory-structure/hashlib
