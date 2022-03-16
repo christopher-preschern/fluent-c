@@ -26,4 +26,7 @@ jobs:
         cp ../hashlib/hashlib.a ./hashlib/hashlib.a
         cp ../hashlib/inc/adlerhash.h ./hashlib/adlerhash.h
         cp ../hashlib/inc/bernsteinhash.h ./hashlib/bernsteinhash.h
-        ls ./hashlib
+
+    - name: Build main application    
+      working-directory: directory-structure/main
+      run: make
