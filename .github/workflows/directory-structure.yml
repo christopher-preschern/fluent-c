@@ -22,6 +22,7 @@ jobs:
     - name: Copy hashlib
       working-directory: directory-structure/main
       run: |
+        mkdir hashlib
         cp ../hashlib/hashlib.a ./hashlib/hashlib.a
         cp ../hashlib/inc/adlerhash.h ./hashlib/adlerhash.h
         cp ../hashlib/inc/bernsteinhash.h ./hashlib/bernsteinhash.h
