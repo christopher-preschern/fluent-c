@@ -18,7 +18,7 @@ typedef struct
 
 static PoolElement memory_pool[MAX_ELEMENTS];
 
-void* poolTake(int size)
+void* poolTake(size_t size)
 {
   if(size <= ELEMENT_SIZE)
   {
@@ -48,7 +48,7 @@ void poolRelease(void* pointer)
 
 
 /* Allocates memory and asserts if no memory is available */
-void* mallocWrapper(int size)
+void* mallocWrapper(size_t size)
 {
   void* pointer = malloc(size);
   assert(pointer);
@@ -88,7 +88,7 @@ int getFileLength(char* filename)
 {
   FILE * f = fopen (filename, "r");
   fseek (f, 0, SEEK_END);
-  int file_length = ftell (f);
+  int file_length = ftell (f);  /* copy return value of size_t to int */
   fclose(f);
   return file_length;
 }
@@ -162,6 +162,6 @@ int main()
 {
   chdir(".\\text");
   encryptDirectoryContent();
-  printf("Successfully encrypted directory content");
+  printf("\nSuccessfully encrypted directory content");
 }
 
