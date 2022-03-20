@@ -16,9 +16,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build Caesar encryption code    
-      working-directory: iterator
+      working-directory: memory-management
       run: make
 
     - name: Run Encryption
-      working-directory: iterator
-      run: ./iterator
+      working-directory: memory-management
+      run: ./caesar
