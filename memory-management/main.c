@@ -51,6 +51,7 @@ void poolRelease(void* pointer)
 void* mallocWrapper(size_t size)
 {
   void* pointer = malloc(size);
+  printf("Alloc size=%i pointer=%x\n", size, pointer);
   assert(pointer);
   return pointer;
 }
