@@ -18,7 +18,7 @@ typedef struct
 
 static PoolElement memory_pool[MAX_ELEMENTS];
 
-void* poolTake(size_t size)
+void* poolTake(int size)
 {
   if(size <= ELEMENT_SIZE)
   {
@@ -48,10 +48,9 @@ void poolRelease(void* pointer)
 
 
 /* Allocates memory and asserts if no memory is available */
-void* mallocWrapper(size_t size)
+void* mallocWrapper(int size)
 {
   void* pointer = malloc(size);
-  printf("Alloc size=%i pointer=%x\n", size, pointer);
   assert(pointer);
   return pointer;
 }
@@ -68,9 +67,9 @@ void freeWrapper(void *pointer)
 /* Performs a Caesar encryption with the fixed key 3.
     The parameter 'text' must contain a text with only capital letters.
     The parameter `length' must contain the length of the text excluding NULL termination. */
-void caesar(char* text, size_t length)
+void caesar(char* text, int length)
 {
-   size_t i;
+   int i;
    for(i=0; i<length; i++)
    {
      text[i] = text[i]+3;
@@ -98,11 +97,11 @@ int getFileLength(char* filename)
 
 /* Stores the content of the file with the provided 'filename' into the provided 'buffer'
     (which has to be least of size 'file_length'). */
-void readFileContent(char* filename, char* buffer, size_t file_length)
+void readFileContent(char* filename, char* buffer, int file_length)
 {
   FILE * f = fopen (filename, "r");
   fseek (f, 0, SEEK_SET);
-  size_t read_elements = fread (buffer, 1, file_length, f);
+  int read_elements = fread (buffer, 1, file_length, f);
   buffer[read_elements] = '\0';
   fclose (f);
 }
@@ -113,7 +112,6 @@ void readFileContent(char* filename, char* buffer, size_t file_length)
     the required buffers for storing the file content */
 void encryptCaesarFile(char* file_name)
 {
-    printf("TRY TO ENCRYPT FILE OF %s\n", file_name);
   char* text = NULL;
   int size = getFileLength(file_name);
   if(size>0)
@@ -138,7 +136,6 @@ void encryptCaesarFile(char* file_name)
     will also be shifted by the Caesar encryption. */
 void encryptCaesarFilename(char* file_name)
 {
-    printf("TRY TO ENCRYPT FILENAME OF %s\n", file_name);
   char* buffer = poolTake(MAX_FILENAME_SIZE);
   strncpy(buffer, file_name, MAX_FILENAME_SIZE);
   caesar(buffer, strnlen(buffer, MAX_FILENAME_SIZE));
@@ -163,8 +160,7 @@ void encryptDirectoryContent()
 
 int main()
 {
-  int i = chdir(".\\text");
-  printf("DIR CHANGED? %i\n", i);
+  chdir(".\\text");
   encryptDirectoryContent();
   printf("Successfully encrypted directory content");
 }
