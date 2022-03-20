@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "driver.h"
 
 int main()
@@ -11,4 +12,5 @@ int main()
     pointer++;
   }
   closeSender(s);
+  printf("Successfully used the driver functionality");
 }
