@@ -85,11 +85,11 @@ void caesar(char* text, size_t length)
 
 
 /* Returns the length of the file with the provided 'filename' */
-size_t getFileLength(char* filename)
+int getFileLength(char* filename)
 {
   FILE * f = fopen (filename, "r");
   fseek (f, 0, SEEK_END);
-  size_t file_length = ftell (f);
+  int file_length = ftell (f);
   fclose(f);
   return file_length;
 }
@@ -113,8 +113,9 @@ void readFileContent(char* filename, char* buffer, size_t file_length)
     the required buffers for storing the file content */
 void encryptCaesarFile(char* file_name)
 {
+    printf("TRY TO ENCRYPT FILE OF %s\n", file_name);
   char* text = NULL;
-  size_t size = getFileLength(file_name);
+  int size = getFileLength(file_name);
   if(size>0)
   {
   text = mallocWrapper(size);
@@ -137,6 +138,7 @@ void encryptCaesarFile(char* file_name)
     will also be shifted by the Caesar encryption. */
 void encryptCaesarFilename(char* file_name)
 {
+    printf("TRY TO ENCRYPT FILENAME OF %s\n", file_name);
   char* buffer = poolTake(MAX_FILENAME_SIZE);
   strncpy(buffer, file_name, MAX_FILENAME_SIZE);
   caesar(buffer, strnlen(buffer, MAX_FILENAME_SIZE));
@@ -161,7 +163,8 @@ void encryptDirectoryContent()
 
 int main()
 {
-  chdir(".\\text");
+  int i = chdir(".\\text");
+  printf("DIR CHANGED? %i\n", i);
   encryptDirectoryContent();
   printf("Successfully encrypted directory content");
 }
