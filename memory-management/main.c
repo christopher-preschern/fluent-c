@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <bsd/string.h>
 #include <stdint.h>
 #include <dirent.h>
 #include <assert.h>
@@ -138,7 +137,7 @@ void encryptCaesarFile(char* file_name)
 void encryptCaesarFilename(char* file_name)
 {
   char* buffer = poolTake(MAX_FILENAME_SIZE);
-  strlcpy(buffer, file_name, MAX_FILENAME_SIZE);
+  strncpy(buffer, file_name, MAX_FILENAME_SIZE);
   caesar(buffer, strnlen(buffer, MAX_FILENAME_SIZE));
   printf("\nEncrypted file name: %s ", buffer);  
   poolRelease(buffer);
