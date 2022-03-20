@@ -1,0 +1,24 @@
+name: Memory Management
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build Caesar encryption code    
+      working-directory: iterator
+      run: make
+
+    - name: Run Encryption
+      working-directory: iterator
+      run: ./iterator
