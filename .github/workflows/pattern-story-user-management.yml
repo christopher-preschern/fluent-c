@@ -22,3 +22,8 @@ jobs:
     - name: Run application
       working-directory: pattern-story-user-management
       run: ./usermanagement
+
+
+    - name: Show logfile
+      working-directory: pattern-story-user-management
+      run: cat ./logfile
