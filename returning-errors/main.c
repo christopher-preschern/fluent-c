@@ -14,5 +14,11 @@ int main()
   RegError err = releaseKey(my_key);
   if(err == CANNOT_ADD_KEY)
   {
-    printf("Key cannot be relased, because the registry is full\n");}
+    printf("Key cannot be relased, because the registry is full\n");
   }
+  else
+  {
+    printf("Successfully released registry key\n");
+  }
+}
+
