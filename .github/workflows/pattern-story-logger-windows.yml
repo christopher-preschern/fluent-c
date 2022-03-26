@@ -25,4 +25,4 @@ jobs:
 
     - name: Show logfile content
       working-directory: pattern-story-logger
-      run: run: more log.txt
+      run: more log.txt
