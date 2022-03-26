@@ -22,3 +22,7 @@ jobs:
     - name: Run application
       working-directory: pattern-story-logger
       run: ./logger
+
+    - name: Show logfile content
+      working-directory: pattern-story-logger
+      run: cat ./log.txt
