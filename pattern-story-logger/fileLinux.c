@@ -1,6 +1,7 @@
 #ifdef __unix__
 #include <fcntl.h>
 #include <unistd.h>
+#include <string.h>
 #include "fileAccess.h"
 void* initiallyOpenLogFile()
 {
