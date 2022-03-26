@@ -47,7 +47,7 @@ bool isInList(const char* module)
 
 void stdoutLogging(const char* buffer)
 {
-  printf(buffer);
+  printf("%s", buffer);
 }
 
 void fileLogging(const char* buffer)
