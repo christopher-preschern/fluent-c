@@ -21,6 +21,7 @@ int main()
 	
     printf("User: %s ", element);
     printf("Authentication success? %d\n", authenticateUser(element, "pass"));
+    printf("Authentication failed? %d\n", authenticateUser(element, "wrong"));
   }
   
   destroyIterator(it);
