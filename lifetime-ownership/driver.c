@@ -11,8 +11,8 @@ struct Sender
 
 
 static struct Sender dummy_sender;
-static int sent_packets;
-static int received_packets;
+static int number_of_sent_packets = 0;
+static int number_of_received_packets = 0;
 
 static void lock()
 {
@@ -84,7 +84,7 @@ SENDER openSender(char* destination_ip)
 void sendByte(SENDER s, char data)
 {
   lock(); /* mutual exclusion for threads */
-  sent_packets++;
+  number_of_sent_packets++;
   unlock();
   /* send data via socket stored in SENDER s */
 }
@@ -101,17 +101,17 @@ void closeSender(SENDER s)
 
 int getNumberOfSentBytes()
 {
-  return sent_packets;
+  return number_of_sent_packets;
 }
 
 int getNumberOfReceivedBytes()
 {
-  return received_packets;
+  return number_of_received_packets;
 }
 
 char receiveByte()
 {
-  received_packets++;
+  number_of_received_packets++;
   /* socket stuff */
 }
 
