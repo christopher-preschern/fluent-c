@@ -17,6 +17,7 @@ struct ACCOUNT
 static struct ACCOUNT accountData1;
 static struct ACCOUNT accountData2;
 static struct ACCOUNT accountData3;
+static struct ACCOUNT* accountList;
 
 static void initList()
 {
@@ -31,11 +32,13 @@ static void initList()
   strcpy(accountData3.loginname, "Y");
   strcpy(accountData3.password, "Y");
   accountData3.next = NULL;
+  
+  accountList = &accountData1;
 }
 
 static struct ACCOUNT* getFirst()
 {
-  return &accountData1;
+  return accountList;
 }
 
 static struct ACCOUNT* getNext(struct ACCOUNT* current)
