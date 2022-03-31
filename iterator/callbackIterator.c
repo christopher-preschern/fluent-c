@@ -2,6 +2,7 @@
 #define MAX_PWD_LENGTH 50
 
 #include <stddef.h>
+#include <string.h>
 #include "callbackIterator.h"
 
 
@@ -19,16 +20,16 @@ static struct ACCOUNT accountData3;
 
 static void initList()
 {
-  strcpy(accountData1.loginname, "A");
-  strcpy(accountData1.password, "A");
+  strcpy(accountData1.loginname, "Y");
+  strcpy(accountData1.password, "Y");
   accountData1.next = &accountData2;
   
-  strcpy(accountData2.loginname, "B");
-  strcpy(accountData2.password, "B");
+  strcpy(accountData2.loginname, "X");
+  strcpy(accountData2.password, "X");
   accountData2.next = &accountData3;
   
-  strcpy(accountData3.loginname, "C");
-  strcpy(accountData3.password, "C");
+  strcpy(accountData3.loginname, "Y");
+  strcpy(accountData3.password, "Y");
   accountData3.next = NULL;
 }
 
