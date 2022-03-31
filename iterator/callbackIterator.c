@@ -39,7 +39,7 @@ static struct ACCOUNT* getFirst()
 
 static struct ACCOUNT* getNext(struct ACCOUNT* current)
 {
-  return current->nextPosition;
+  return current->next;
 }
 
 
