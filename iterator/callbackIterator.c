@@ -32,7 +32,7 @@ static void initList()
   accountData3.next = NULL;
 }
 
-static struct ACCOUNT* getFirst(struct ACCOUNT* current)
+static struct ACCOUNT* getFirst()
 {
   return &accountData1;
 }
@@ -47,7 +47,7 @@ void iterateLoginNames(FP_CALLBACK callback, void* arg)
 {
   initList();
   
-  struct ACCOUNT* element = &accountData[0];
+  struct ACCOUNT* element = getFirst();
   while(element != NULL)
   {
     callback(element->loginname, arg);
