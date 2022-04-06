@@ -21,7 +21,7 @@ static struct ACCOUNT accountData[MAX_USERS] = {{"A","A",1}, {"B","B",2}, {"C","
 
 static struct ACCOUNT* getFirst()
 {
-    return &accoundData[0];
+    return &accountData[0];
 }
 
 static struct ACCOUNT* getNext(struct ACCOUNT* current)
@@ -40,17 +40,17 @@ static struct ACCOUNT* getNext(struct ACCOUNT* current)
 struct ITERATOR
 {
   char buffer[MAX_NAME_LENGTH];
-  struct ACCOUNT_NODE* element;
+  struct ACCOUNT* element;
 };
 
-struct ITERATOR* createIterator()
+ITERATOR_HANDLE createIterator()
 {
   struct ITERATOR* iterator = malloc(sizeof(struct ITERATOR));
   iterator->element = getFirst();
   return iterator;
 }
 
-char* getNextLoginName(struct ITERATOR* iterator)
+char* getNextLoginName(ITERATOR_HANDLE iterator)
 {
   if(iterator->element != NULL)
   {
@@ -64,7 +64,7 @@ char* getNextLoginName(struct ITERATOR* iterator)
   }
 }
 
-void destroyIterator(struct ITERATOR* iterator)
+void destroyIterator(ITERATOR_HANDLE iterator)
 {
   free(iterator);
 }
