@@ -37,6 +37,12 @@ static struct ACCOUNT* getNext(struct ACCOUNT* current)
 }
 
 
+struct ITERATOR
+{
+  char buffer[MAX_NAME_LENGTH];
+  struct ACCOUNT_NODE* element;
+};
+
 struct ITERATOR* createIterator()
 {
   struct ITERATOR* iterator = malloc(sizeof(struct ITERATOR));
