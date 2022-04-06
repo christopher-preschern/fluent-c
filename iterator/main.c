@@ -26,7 +26,8 @@ bool cursor_anyoneWithX()
   ITERATOR_HANDLE iterator = createIterator();
   while(loginName = getNextLoginName(iterator))
   {
-    if(loginName[0] == 'X')
+    printf("NAME: %s\n", loginName);
+    if(loginName[0] == 'H')
     {
       destroyIterator(iterator);
       return true;
