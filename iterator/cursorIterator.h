@@ -1,4 +1,4 @@
-typedef struct Iterator* ITERATOR_HANDLE;
+typedef struct ITERATOR* ITERATOR_HANDLE;
 
 ITERATOR_HANDLE createIterator();
 
