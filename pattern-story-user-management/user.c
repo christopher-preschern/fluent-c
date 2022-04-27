@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #define MAX_USERS 50
 
@@ -30,6 +31,9 @@ static void logError(char* username, char* pwd)
 
 bool authenticateUser(char* username, char* pwd)
 {
+  assert(username);
+  assert(pwd);
+  
   for(int i=0; i<MAX_USERS; i++)
   {
     if(strcmp(username, userList[i].name) == 0)
@@ -61,6 +65,9 @@ static bool userExists(char* username)
 
 ERROR_CODE addUser(char* username, char* pwd)
 {
+  assert(username);
+  assert(pwd);
+  
   if(userExists(username))
   {
     return USER_ALREADY_EXISTS;
