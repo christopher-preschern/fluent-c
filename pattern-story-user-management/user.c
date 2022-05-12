@@ -20,10 +20,10 @@ typedef struct
 
 static USER userList[MAX_USERS];
 
-static void logError(char* username, char* pwd)
+static void logError(char* username)
 {
   char logString[200];
-  sprintf(logString, "Failed login. User:%s, Pwd:%s\n", username, pwd);
+  sprintf(logString, "Failed login. User:%s\n", username);
   FILE* f = fopen("logfile", "a+");
   fwrite(logString, 1, strlen(logString), f);
   fclose(f);
@@ -44,7 +44,7 @@ bool authenticateUser(char* username, char* pwd)
       }
       else
       {
-        logError(username, pwd);
+        logError(username);
       }
     }
   }
