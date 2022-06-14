@@ -20,7 +20,6 @@ int main()
   {
     printf("Successfully released registry key\n");
   }
-  fprintf("Test - %i", __LINE__);
   
   return 0;
 }
