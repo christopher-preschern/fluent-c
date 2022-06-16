@@ -114,7 +114,6 @@ void encryptCaesarFile(char* file_name)
 {
   char* text = NULL;
   int size = getFileLength(file_name);
-  printf("File %s has length %i\n", file_name, size);
   if(size>0)
   {
   text = mallocWrapper(size);
