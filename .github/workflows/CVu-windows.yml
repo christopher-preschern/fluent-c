@@ -1,0 +1,28 @@
+name: CVu Windows
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build CVu Windows    
+      working-directory: CVu
+      run: make
+
+    - name: Run CVu Windows
+      working-directory: cvu
+      run: ./cvu
+
+    - name: Show directory
+      working-directory: CVu
+      run: ls
