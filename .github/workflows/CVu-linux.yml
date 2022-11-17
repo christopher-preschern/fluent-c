@@ -1,4 +1,4 @@
-name: CVu Windows
+name: CVu Linux
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: linux-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
