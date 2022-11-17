@@ -1,5 +1,4 @@
-#include <string.h>
-#include <stdlib.h>
+#include <stdio.h>
 #ifdef __unix__
   #include <sys/stat.h>
 #elif defined _WIN32
