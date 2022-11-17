@@ -20,7 +20,7 @@ jobs:
       run: make
 
     - name: Run CVu Windows
-      working-directory: cvu
+      working-directory: CVu
       run: ./cvu
 
     - name: Show directory
