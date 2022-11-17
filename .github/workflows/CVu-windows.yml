@@ -25,4 +25,4 @@ jobs:
 
     - name: Show directory
       working-directory: CVu
-      run: ls
+      run: cd %HOMEPATH% & dir
